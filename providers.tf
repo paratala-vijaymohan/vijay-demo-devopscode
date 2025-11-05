@@ -1,8 +1,21 @@
-resource "aws_instance" "example" {
-    ami = "ami-0a25a306450a2cba3"
-    instance_type = "t3.micro"
-    key_name = "roche-key"
-    tags_all = {
-      "Name" = "vijay-vm-1"
+terraform {
+  backend "s3" {
+    bucket = "vijay-roche-terraform-bucket"
+    key    = "dev/vijayp/terraform.tfstate"
+    region = "ap-southeast-2"
+    encrypt = true
+    dynamodb_table = "vijay-roche-table1"
+  }
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "6.19.0"
     }
+  }
+}
+
+provider "aws" {
+  # Configuration options
+  # region location info 
+  region = "ap-southeast-2"
 }
