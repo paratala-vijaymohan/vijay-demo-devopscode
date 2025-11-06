@@ -36,8 +36,8 @@ jobs:
         aws-region: ap-southeast-2
       
     - name: verify aws connection
-     run: |
-     echo "checking with commond"
-     aws s3 ls
+      run: |
+        echo "checking with commond"
+        aws s3 ls
 
   

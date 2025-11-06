@@ -4,6 +4,7 @@ resource "aws_instance" "example" {
   instance_type = var.vm-size
   #key_name = var.ec2-key-size
   key_name = aws_key_pair.example.key_name
+  vpc_security_group_ids = [ aws_security_group.allow_tls.id ]
   tags = {
     "name"= var.vm-name
   }
@@ -18,7 +19,7 @@ resource "aws_instance" "example" {
     type = "ssh"
     user = "ec2-user"
     host = self.public_ip
-    timeout = "2m"
+    timeout = "3m"
     private_key = tls_private_key.example.private_key_pem
   }
 }
