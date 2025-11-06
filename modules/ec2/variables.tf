@@ -15,11 +15,14 @@ variable "vm-name" {
 
 }
 
-variable "ec2-key-size" {
-  type = string
-}
+# variable "ec2-key-size" {
+#   type = number
+# }
 
 variable "private-key-algo" {
+  type = string
+}
+variable "ec2-key-name" {
   type = string
 }
 variable "key-size" {
@@ -30,5 +33,8 @@ variable "my-vpc-id" {
 }
 
 variable "my-sec-group-name" {
+  
+}
+variable "novm" {
   
 }
