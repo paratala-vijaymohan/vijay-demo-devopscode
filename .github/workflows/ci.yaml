@@ -48,6 +48,11 @@ jobs:
           path: |
            modules/ec2/ansible-inventory.txt
            modules/ec2/vijay-key.pem
+  
+  
+  
+  
+  
   infra-c-job:
     needs: infra-provision-job
     runs-on: ubuntu-latest
@@ -79,7 +84,7 @@ jobs:
       - name: running ansible playbook in dynamic inventory
         run: |
           echo "Running ansible playbook"
-          chmod 400 ashutoshh-key.pem
+          chmod 400 vijay-key.pem
           cd my-ansible
           ansible-playbook -i ../ansible-inventory.txt --private-key ../vijay-key.pem playbook
 
