@@ -46,7 +46,7 @@ jobs:
         with:
           name: ashutoshh-github-artifact
           path: modules/ec2/ansible-inventory.txt
-  infra-destroy-job:
+  infra-c-job:
     needs: infra-provision-job
     runs-on: ubuntu-latest
     steps:
