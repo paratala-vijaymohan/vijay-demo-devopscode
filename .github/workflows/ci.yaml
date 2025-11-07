@@ -79,7 +79,7 @@ jobs:
           echo "Running ansible playbook"
           chmod 400 ashutoshh-key.pem
           cd my-ansible
-          ansible-playbook -i ../ansible-inventory.txt --private-key ../ashutoshh-key.pem playbook
+          ansible-playbook -i ../ansible-inventory.txt --private-key ../vijay-key.pem playbook
 
       - name: installing terraform
         uses: hashicorp/setup-terraform@v3
