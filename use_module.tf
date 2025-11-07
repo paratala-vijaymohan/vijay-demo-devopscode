@@ -24,9 +24,9 @@ provider "aws" {
 module "my-vijay-module-ec2" {
     source = "./modules/ec2"
     vijaymiid = "ami-0a25a306450a2cba3"
-    vm-name = "vijay-vmby-module"
+    vm-name = "vijay-vmby-module-day4"
     vm-size = "t2.nano"
-    ec2-key-name = "ashukeyby-mode"
+    ec2-key-name = "ashukeyby-modeday4"
     private-key-algo = "RSA"
     key-size = 4096
     my-vpc-id = "vpc-02d56e9aa1ce2f114"
